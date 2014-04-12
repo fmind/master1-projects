@@ -1,0 +1,1913 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass beamer
+\begin_preamble
+\usepackage{listings}
+\usepackage{ae,aecompl}
+
+\usetheme{Warsaw}
+
+% or ...
+%\usetheme{Antibes}	% tree outline, neat
+%\usetheme{JuanLesPins}	% like Antibes, with shading
+%\usetheme{Bergen}	% outline on side
+%\usetheme{Luebeck}	% like Warsaw, square sides
+%\usetheme{Berkeley}	% interesting left bar outline
+%\usetheme{Madrid}	% clean, nice.  7/12 page numbers
+%\usetheme{Berlin}	% dots show slide number
+%\usetheme{Malmoe}	% OK, plain, unshaded
+%\usetheme{Boadilla}	% nice, white bg, no top bar
+%\usetheme{Marburg}	% nice, outline on right
+%\usetheme{boxes}	% ???
+%\usetheme{Montpellier}	% tree outline on top, plainish white
+%\usetheme{Copenhagen}	% like Warsaw
+%\usetheme{PaloAlto}	% looks good
+%\usetheme{Darmstadt}	% like Warsaw with circle outline
+%\usetheme{Pittsburgh}
+%\usetheme{default}
+%\usetheme{Rochester}	% like boxy, unshaded warsaw
+%\usetheme{Dresden}	% circle outline on top
+%\usetheme{Singapore}	% purple gradient top
+%\usetheme{Frankfurt}	% like Warsaw with circle outline on top
+%\usetheme{Szeged}
+%\usetheme{Goettingen}	% light purple right bar outline
+%\usetheme{Warsaw}
+%\usetheme{Hannover}	% like Goett with bar on left
+%\usetheme{compatibility}
+%\usetheme{Ilmenau}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Jeu de société
+\end_layout
+
+\begin_layout Author
+Médéric HURIER
+\end_layout
+
+\begin_layout Institute
+Master 1 STS - MIAGE
+\end_layout
+
+\begin_layout Date
+2012-2013
+\end_layout
+
+\begin_layout BeginFrame
+Sommaire
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Présentation du jeu
+\end_layout
+
+\begin_layout BeginPlainFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size giant
+Présentation du jeu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Mon nom est Capitaine Duke
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+5cm
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+Vous êtes le capitaine d'un vaisseau spatial
+\end_layout
+
+\begin_layout Itemize
+Vous devez répondre aux requêtes votre équipage
+\end_layout
+
+\begin_layout Itemize
+Pour chaque problème,
+\begin_inset Newline newline
+\end_inset
+
+il faut écrire une fonction Java qui vérifie des tests
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ColumnsCenterAligned
+
+\end_layout
+
+\begin_deeper
+\begin_layout Column
+6cm
+\end_layout
+
+\end_deeper
+\begin_layout ColumnsCenterAligned
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/java/CaptainDuke/DATA/logo.png
+	display false
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Règles du jeu
+\end_layout
+
+\begin_layout Itemize
+Chaque mission réussie vous récompense d'un nombre de points comptant pour
+ votre score final
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+critères: difficulté de la partie, nombre d'essais restant, temps passé,
+ dernier essai chanceux
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Si votre nombre d'essais descend en dessous de 0, la mission se termine
+ et votre score est de 0
+\end_layout
+
+\begin_layout Itemize
+A la fin des 6 scénarios, vous pouvez poster votre score sur un serveur
+ dédié
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Déroulement
+\end_layout
+
+\begin_layout Itemize
+Lancer une nouvelle partie en choisissant la difficulté
+\end_layout
+
+\begin_layout Itemize
+Liser l'histoire puis appuyer sur le bouton Commencer pour démarrer le chronomèt
+re
+\end_layout
+
+\begin_layout Itemize
+Écrire le code nécessaire et tester le
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+si la réponse est correcte, un message vous félicite et affiche votre score
+\end_layout
+
+\begin_layout Itemize
+sinon, une boîte de dialogue avec l'erreur s'affiche, avec la sortie du
+ programme
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Les missions s'enchaînent ...
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Démonstration
+\end_layout
+
+\begin_layout BeginPlainFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size giant
+Démonstration
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Choix d'implémentation
+\end_layout
+
+\begin_layout BeginPlainFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size giant
+Choix d'implémentation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Les choix import.ants
+\end_layout
+
+\begin_layout Itemize
+Interface graphique => 
+\series bold
+\strikeout on
+JavaFX
+\series default
+\strikeout default
+ javax.swing
+\end_layout
+
+\begin_layout Itemize
+Persistance => java.io.Serializable + java.sql
+\end_layout
+
+\begin_layout Itemize
+Multimédia => javax.sound
+\end_layout
+
+\begin_layout Itemize
+Méta-programmation => javax.tools.JavaCompiler + java.lang.reflect
+\end_layout
+
+\begin_layout Itemize
+Réseau => java.net
+\end_layout
+
+\begin_layout Itemize
+Multi-tâche => java.util.Timer
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+Beaucoup de bibliothèques natives.
+\end_layout
+
+\begin_layout Standard
+\align center
+exception: driver SQLite pour JDBC
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Les paquets
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/packages.png
+	display false
+	width 10cm
+	height 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Les classes
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/classes.png
+	display false
+	width 12cm
+	height 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+En détail: la classe CodeChecker 1/4
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size tiny
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+private static File file(String code, String test) throws GameException
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+File javaFile;
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+try {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+javaFile = File.createTempFile("javanaute", ".java");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+FileWriter out = new FileWriter(javaFile);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+String name = javaFile.getName().replace(".java", "");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.write("public class " + name + " {
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.write("public void test() {
+\backslash
+n");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.write(test);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.write("
+\backslash
+n}");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.write(code);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.write("
+\backslash
+n}");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+out.close();
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+} catch (IOException e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+throw new GameException("Impossible de créer le fichier temporaire");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+}
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+return javaFile;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+En détail: la classe CodeChecker 2/4
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size tiny
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+private static File compile(File file) throws CompilerError {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ByteArrayOutputStream err = new ByteArrayOutputStream();
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+File classFile = new File(file.getAbsolutePath().replace(".java", ".class"));
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+int status = compiler.run(null, null, err, file.getAbsolutePath());
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+String errStr = err.toString().replace(file.getAbsolutePath(), "");
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if (status != 0 || !classFile.exists()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+throw new CompilerError("COMPILATION
+\backslash
+n" + errStr);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+}
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+return classFile;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+En détail: la classe CodeChecker 3/4
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size tiny
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+private static void run(File classFile) throws GameException, AssertionError,
+ RuntimeError {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+String className = classFile.getName().replace(".class", "");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+String parentDir = classFile.getParent() + File.separator;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+URL[] searchPath = new URL[1];
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+try {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+searchPath[0] = new File(parentDir).toURI().toURL();
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+} catch (MalformedURLException ex) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+throw new GameException("Impossible de résoudre le fichier class: " + ex);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+}
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+try {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ClassLoader cl = new URLClassLoader(searchPath);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+cl.setDefaultAssertionStatus(true);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Class clazz = Class.forName(className, true, cl);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Object object = clazz.newInstance();
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Method method = clazz.getDeclaredMethod("test");
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+method.invoke(object);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+} catch (...) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+throw new GameException("Impossible de charger la classe: " + ex);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+En détail: la classe CodeChecker 4/4
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\size tiny
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+public static CheckResult check(String code, String test) throws GameException
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if (test == null || test.isEmpty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+return new CheckResult("", new CompilerError("La fonction de test est vide"));
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+}
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+File javaFile = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+File classFile = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+Error error = null;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+PrintStream oldOut = System.out;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+ByteArrayOutputStream newOut = new ByteArrayOutputStream();
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+System.setOut(new PrintStream(newOut));
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+try {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+javaFile = CodeChecker.file(code, test);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+classFile = CodeChecker.compile(javaFile);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CodeChecker.run(classFile);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+} catch (...) {
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+}
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+System.setOut(oldOut);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+CheckResult result = new CheckResult(newOut.toString(), error);
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+return result;
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size tiny
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Conclusion
+\end_layout
+
+\begin_layout Itemize
+Beaucoup de bibliothèques Java utilisées (SWING, multimédia, multi-tâche,
+ HTTP, 
+\series bold
+méta-programmation
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+Utilisation des concepts de Génie Logiciel (SCM, tests unitaires, refactorisatio
+n ...)
+\end_layout
+
+\begin_layout Itemize
+Une grosse déception: JavaFX
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout BeginFrame
+Conclusion
+\end_layout
+
+\begin_layout Itemize
+Beaucoup de bibliothèques Java utilisées (SWING, multimédia, multi-tâche,
+ HTTP, 
+\series bold
+méta-programmation
+\series default
+)
+\end_layout
+
+\begin_layout Itemize
+Utilisation des concepts de Génie Logiciel (SCM, tests unitaires, refactorisatio
+n ...)
+\end_layout
+
+\begin_layout Itemize
+Une grosse déception: JavaFX
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Mais il m'en faudra plus pour aimer Java
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/no java.jpg
+	display false
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\begin_layout Section
+Questions
+\end_layout
+
+\begin_layout BeginPlainFrame
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\size giant
+Questions ?
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout EndFrame
+
+\end_layout
+
+\end_body
+\end_document

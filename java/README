@@ -1,0 +1,13 @@
+Les consignes d'utilisation et de compilation sont consultables dans le rapport doc/Rapport.pdf.
+
+Contenu du rapport:
+- doc/: rapport, diagrammes de classe et javadoc
+- src/: sources du projet (.java)
+- dist/: fichier exécutable (.jar)
+- lib/: bibliothèques externes
+- test/: fichiers de test
+- server/: serveur de score en Python
+- DATA/: ressources de l'application (musique, image, scénario)
+- SAVE/: sauvegarde de l'utilisateur (option)
+
+Si vous avez des questions, contactez moi à l'adresse: mederic.hurier@freaxmind.pro.

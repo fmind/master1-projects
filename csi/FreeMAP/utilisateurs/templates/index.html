@@ -1,0 +1,55 @@
+{% extends 'layout/utilisateurs.html' %}
+{% load thumbnail %}
+
+{% block content %}
+<section data-role="content" class="align_center">
+    <div class="limit">
+        <h3 class="new-font">Bienvenue sur notre AMAP</h3>
+        <hr />
+        <br />
+
+        <pre id="poesie">
+            La nature est tout ce qu’on voit,
+            Tout ce qu’on veut, tout ce qu’on aime.
+            Tout ce qu’on sait, tout ce qu’on croit,
+            Tout ce que l’on sent en soi-même.
+            <br />
+            Elle est belle pour qui la voit,
+            Elle est bonne à celui qui l’aime,
+            Elle est juste quand on y croit
+            Et qu’on la respecte en soi-même.
+            <br />
+            Regarde le ciel, il te voit,
+            Embrasse la terre, elle t’aime.
+            La vérité c’est ce qu’on croit
+            En la nature c’est toi-même.
+
+            <span class="right">George Sand</span>
+        </pre>
+
+        <div>
+            {% if produits %}
+                <h4 class="new-font">Panier Gagnant</h4>
+                <div class="produits">
+                    {% for type_produit, quantite in produits %}
+                    <div class="produit">
+                        {% thumbnail type_produit.photo "65x65" as img %}
+                        <img src="{{ img.url }}" alt="{{ type_produit.intitule }}" title="{{ type_produit.intitule }}" />
+                        {% endthumbnail %}
+                        <span>x {{ quantite }}</span>
+                    </div>
+                    {% endfor %}
+                    <div class="clear"></div>
+                </div>
+            {% else %}
+                <h4>Le Panier du Jour n'a pas été rempli ...</h4>
+            {% endif %}
+
+            <br />
+            <br />
+
+            <a href="{% url abonnement %}" data-role="button" data-icon="check" data-iconpos="right">Abonnez-vous sans plus attendre !</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

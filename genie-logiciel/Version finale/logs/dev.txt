@@ -1,0 +1,11 @@
+mai 07, 2013 1:41:07 PM SocialGraph initializeLoggers
+INFO: Répertoire de travail: /mnt/data/workspace/miage-m1/génie logiciel/Projet_GL_AMBOUNDA_HURIER_PY-PATINEC_THEPSOUVANH/Version finale
+
+mai 07, 2013 1:41:07 PM SocialGraph main
+INFO: Vérification des arguments du programme ...
+mai 07, 2013 1:41:07 PM SocialGraph main
+INFO: Ouverture du flux d'entrée ...
+mai 07, 2013 1:41:07 PM SocialGraph main
+INFO: Création des composants ...
+mai 07, 2013 1:41:08 PM SocialGraph main
+INFO: Démarrage du contrôleur ..

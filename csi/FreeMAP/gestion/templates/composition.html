@@ -1,0 +1,375 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static %}
+{% load thumbnail %}
+
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="/administration/">{% trans 'Home' %}</a>
+    &rsaquo;
+    Composition
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div id="sidebar">
+    <h3>Produits à votre disposition</h3>
+
+    <ul>
+    {% for type in types %}
+        <li class="type" data-id="{{ type.id }}">
+            {% thumbnail type.photo "50x50" as img %}
+            <img src="{{ img.url }}" alt="{{ type.intitule }}" data-id="{{ type.id }}" draggable="true"/>
+            {% endthumbnail %}
+            <span class="nombre">
+                X
+                <input type"text" data-id="{{ type.id }}" maxlength="2" size="1" value="1" />
+            </span>
+            <div>
+                {{ type.intitule }}
+            </div>
+        </li>
+    {% endfor %}
+    </ul>
+
+    <p id="retour">
+        En cas d'erreur: remettez les produits dans cette boîte.
+    </p>
+</div>
+
+<ul id="panier">
+    <li class="empty">
+        Glissez les produits de votre choix pour commencer à remplir le panier
+    </li>
+    <li class="dot3" style="display: none;">...</li> 
+</ul>
+
+<ul id="propositions"> </ul>
+
+<table id="comptabilite">
+    <tr>
+        <td>Total des produits</td>
+        <td id="total_produits" class="color prix">0.00</td>
+        <td> €</td>
+    </tr>
+    <tr>
+        <td>Total des frais supplémentaires</td>
+        <td class="prix">
+            <input type="text" id="frais_supplementaires" size="8" value="0.00" style="text-align: right" /></td>
+        <td> €</td>
+    </tr>
+    <tr class="line">
+        <td>Nombre de paniers</td>
+        <td id="nombre_paniers" class="prix">{{ nb }}</td>
+    </tr>
+    <tr>
+        <td>Prix de panier moyen (trimestre)</td>
+        <td id="nombre_paniers" class="prix">{{ prix_moyen|floatformat:2 }}</td>
+        <td> €</td>
+    </tr>
+    <tr>
+        <td>Prix de revient par panier</td>
+        <td id="prix_revient_panier" class="prix color">0.00</td>
+        <td> €</td> 
+    </tr>
+    <tr>
+        <td>Prix de revient pour la période</td>
+        <td id="prix_revient_periode" class="prix color">0.00</td>
+        <td> €</td>
+    </tr>
+    <tr>
+        <td colspan="2" class="no-padding">
+            <button id="valider">Valider le panier de la semaine</button>
+        </td>
+    </tr>
+</table>
+</div>
+{% endblock %}
+
+
+{% block extrahead %}
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">
+    /**
+     * Met à jour le tableau de comptabilité
+     * sans data, on rafraichit à partir des informations de l'interface client (cas: changement frais)
+     * @param data données retournés par le serveur (optionnel)
+     */ 
+    function update_comptabilite(data) {
+        var nb_paniers = 0;
+        var frais = 0;
+        var total_produits = 0;
+        var prix_revient_panier = 0;
+        var prix_revient_periode = 0;
+
+        // informations retournées par le serveur
+        if (data) {
+            var composition = data.composition;
+            nb_paniers = parseInt(data.nb);
+            frais = parseFloat(data.frais);
+
+            $("#propositions li").remove();
+            $.each(composition, function (type, infos) {
+                var manque = parseInt(infos.manque);
+                var type = infos.type;
+                total_produits += infos.total;
+
+                $.each(infos.propositions, function(i, prop) {
+                    var li = $("<li />").text(prop.quantite + " " + type + " à " + prop.prix + " € de " + prop.producteur);
+                    $("#propositions").append(li);
+                });
+
+                if (manque) {
+                    var li = $("<li class='alert' />").text("Il manque " + manque + " de " + type + " ! ");
+                    $("#propositions").append(li);
+                }
+            });
+        // informations de l'interface client
+        } else {
+            nb_paniers = parseInt($("#nombre_paniers").text());
+            frais = parseFloat($("#frais_supplementaires").val());
+            total_produits = parseFloat($("#total_produits").text());
+        }
+
+        prix_revient_periode = total_produits + frais;
+        prix_revient_panier = prix_revient_periode / nb_paniers;
+
+        $("#frais_supplementaires").val(frais.toFixed(2));
+        $("#total_produits").text(total_produits.toFixed(2));
+        $("#prix_revient_panier").text(prix_revient_panier.toFixed(2));
+        $("#prix_revient_periode").text(prix_revient_periode.toFixed(2));
+    }
+
+    /**
+     * Ajoute un type de produit au panier de la semaine
+     * @param id identifiant du type de produit
+     * @param qte quantité de produit
+     */
+    function ajout(id, qte) {
+        $.post('ajout', {id: id, qte: qte}, function (data) {
+            update_comptabilite(data);
+        }, 'json');
+
+        return true;
+    }
+
+    /**
+     * Retire un type de produit au panier de la semaine
+     * @param id identifiant du type de produit
+     */
+    function retour(id) {
+        $.post('retour', {id: id}, function (data) {
+            update_comptabilite(data);
+        }, 'json');
+
+        return true;
+    }
+
+    /**
+     * EVENT: Au chargement de la page
+     */
+    $(document).ready(function () {
+        // Autorise le déplacement des produits
+        $('.type').bind('dragstart', function(e) {
+            var img = $(e.originalEvent.target);
+            e.originalEvent.dataTransfer.setData("Text", img.attr('data-id'));
+        });
+
+        // Autorise de déplacer des produits sur les zones #panier et #retour
+        $('#panier, #retour').bind('dragover', function(e) {
+            e.preventDefault();
+
+            return false;
+        });
+
+        // Action au déplacement d'un type sur la zone panier
+        $('#panier').bind('drop', function(e) {
+            e.preventDefault();
+
+            // Récupère le type de produit
+            var id = e.originalEvent.dataTransfer.getData("Text");
+            var type = $("#sidebar .type[data-id="+id+"]").detach();
+            var qte = type.find('input').val()
+            if (!type.size() || !ajout(id, qte))
+                return;
+
+            // Ajoute le type de produit au panier
+            var plus = $("<span class='plus'>+</span>");
+            var dot3 = $("#panier .dot3").detach();
+            type.addClass("dans-panier");
+            $(this).append(type);
+            $(this).append(plus);
+            $(this).append(dot3);
+            $(this).find("li.empty").hide();
+            $(this).find("li.dot3").show();
+        });
+
+        // Action au déplacement d'un type sur la zone retour
+        $('#retour').bind('drop', function(e) {
+            e.preventDefault();
+
+            // Récupère le type de produit
+            var id = e.originalEvent.dataTransfer.getData("Text");
+            var type = $("#panier .type[data-id="+id+"]");
+            if (!type.size() || !retour(id))
+                return;
+
+            // Retire le type de produit du panier
+            type.next().remove();
+            type.removeClass("dans-panier");
+            $("#sidebar ul").append(type.detach());
+            if ($('#panier .type').size() == 0) {
+                $("#panier li.empty").show();
+                $("#panier li.dot3").hide();
+            }
+        });
+
+        // Met à jour la quantité de produit au changement de la zone texte
+        $('.type input').change(function (e) {
+            qte = $(this).val();
+            id = $(this).attr('data-id');
+
+            // contrôles simples sur la valeur
+            if (qte < 1 || qte > 99)
+                return false;
+
+            return ajout(id, qte);
+        });
+
+        // Avertissements et envoie de la composition du panier
+        $("#valider").click(function (e) {
+            var propositions = $("#propositions li");
+            var manquant = $("#propositions li.alert");
+            
+            // aucune proposition
+            if (!propositions.size()) {
+                alert("Vous devez ajouter des produits pour valider le panier !");
+                return false;
+            }
+
+            // produits manquants
+            if (manquant.size() && !confirm("Il vous manque des produits pour compléter le panier.\n Etes vous sûr de valider le panier de la semaine ?"))
+                return false;
+
+            document.location.href = "valider";
+        });
+
+        // Changement des frais supplémentaires du panier
+        $("#frais_supplementaires").change(function (e) {
+            var frais = parseFloat($(this).val());
+            $.post('frais', {frais: frais}, function (data) {
+                update_comptabilite();
+            });
+        });
+
+        // évite de garder l'ancienne valeur en cas de retour en arrière
+        $("#frais_supplementaires").val(0);
+    });
+</script>
+{% endblock %}
+
+
+{% block extrastyle %}{{ block.super }}
+<style type="text/css">
+    #sidebar {
+        float: left;
+        width: 150px;
+        margin: 5px 30px 0px 10px;
+        border: solid gray 1px;
+        text-align: center;
+    }
+    #sidebar h3 {
+        border-bottom: dashed gray 1px;
+        padding-bottom: 5px;
+    }
+    #sidebar ul {
+        padding: 0px;
+        height: 370px;
+        overflow: auto;
+    }
+    #sidebar p {
+        padding-top: 5px;
+        border-top: solid black 1px;
+        font-weight: bold;
+    }
+
+    #panier {
+        min-height: 85px;
+        margin: 10px 0px 20px 180px;
+        padding: 20px;
+        text-align: center;
+        border: dashed gray 3px;
+    }
+    #panier li.empty {
+        font-size: 25px;
+        line-height: 90px;
+        list-style-type: none;
+    }
+    #panier .type, #panier .plus, #panier .dot3 {
+        display: inline-block;
+        margin: 0px 10px;
+    }
+    #panier .plus {
+        position: relative;
+        bottom: 20px;
+        font-size: 40px;
+    }
+    #panier .dot3 {
+        font-size: 40px;
+    }
+
+    #propositions {
+        margin-left: 150px;
+        font-size: 20px;
+    }
+    #propositions .alert {
+        color: red;
+    }
+
+    .prix {
+        text-align: right;
+        min-width: 110px;
+    }
+
+    .type {
+        margin: 5px 0px;
+        font-weight: bold;
+        list-style-type: none;
+    }
+    .type .nombre {
+        display: none;
+    }
+    .type.dans-panier .nombre {
+        display: inline;
+    }
+    .type img {
+        position: relative;
+        top: 5px;
+    }
+
+    #comptabilite {
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+    }
+    #comptabilite tr.line {
+        border-top: solid gray 2px;
+    }
+    #comptabilite td {
+        padding-right: 20px;
+        line-height: 25px;
+        font-size: 25px;
+    }
+    #comptabilite td.color {
+        color: #844200;
+    }
+    #comptabilite #valider {
+        width: 100%;
+        margin: 10px;
+    }
+    #comptabilite .no-padding {
+        padding-right: 0px;
+    }
+</style>
+{% endblock %}

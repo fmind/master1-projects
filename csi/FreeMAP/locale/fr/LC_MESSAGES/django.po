@@ -1,0 +1,5 @@
+msgid "Django administration"
+msgstr "FreeMAP - Bien(Vivre, Libre)"
+
+msgid "Django site admin"
+msgstr "FreeMAP - Bien(Vivre, Libre)"

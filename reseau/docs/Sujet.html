@@ -1,0 +1,102 @@
+<html><head><title>M1 MIAGE - Projet Réseaux</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	</head>
+	<body>
+<h1>Sujet : Implémentation d'un client POP3 et d'un client TFTP</h1>
+
+<hr>
+
+<h2>POP3</h2>
+
+<ul>
+<li>Lire <a href="http://fr.wikipedia.org/wiki/Post_Office_Protocol">l'article Wikipédia sur le Post Office Protocol</a>.
+<ul>
+<li>A quoi sert le protocole POP3 ?</li>
+</ul></li>
+</ul>
+
+<p>Le protocole POP (Post Office Protocol) a d'abord été défini en octobre 1984
+(<a href="http://tools.ietf.org/html/rfc918">RFC 918</a>), puis remplacé par la
+version 2 du même protocole en février 1985 (<a href="http://tools.ietf.org/html/rfc937">RFC 937</a>).</p>
+
+<p>La version actuelle du protocole, la version 3, a d'abord été définie en
+novembre 1988 (<a href="http://tools.ietf.org/html/rfc1081">RFC 1081</a>). Ce
+standard a été mis à jour en mai 1991 (<a href="http://tools.ietf.org/html/rfc1225">RFC 1225</a>), juin 1993 (<a href="http://tools.ietf.org/html/rfc1460">RFC 1460</a>), en novembre 1994 (<a href="http://tools.ietf.org/html/rfc1725">RFC 1725</a>) et finalement en mai
+1996 (<a href="http://tools.ietf.org/html/rfc1939">RFC 1939</a>). Deux autres
+documents complètent la RFC 1939: la <a href="http://tools.ietf.org/html/rfc1957">RFC 1957</a> donne quelques
+informations supplémentaires, tandis que la <a href="http://tools.ietf.org/html/rfc2449">RFC 2449</a> définit des extensions
+au protocole.</p>
+
+<p><b>À faire:</b>
+</p><ol>
+<li>Lire (ou au moins survoler) la <a href="http://tools.ietf.org/html/rfc1939">RFC 1939</a> (<a href="http://abcdrfc.free.fr/rfc-vf/rfc1939.html">version française</a>).</li>
+<li>Survoler les <a href="http://tools.ietf.org/html/rfc1957">RFC 1957</a> et <a href="http://tools.ietf.org/html/rfc2449">RFC 2449</a>.</li>
+<li>Récupérer <a href="http://arche.univ-lorraine.fr/pluginfile.php/261945/mod_resource/content/1/PopServer.class">PopServer.class</a>, le lancer, et s'y connecter avec Telnet ou Putty (en se connectant sur 127.0.0.1, port 1100).</li>
+<li>Avec Telnet ou Putty, vérifiez que vous arrivez à vous authentifier 
+sur le serveur, à lister les mails, et à récupérer leur contenu.</li>
+<li>Programmez (en Java) un client POP3 qui se connecte au serveur POP3,
+ et affiche les expéditeurs et les sujets des messages pour un compte 
+saisi par l'utilisateur.</li>
+</ol>
+<table border="1">
+	<tbody><tr><td>Login</td><td>Mot de passe</td></tr>
+	<tr><td>alice</td><td>123456</td></tr>
+	<tr><td>bob</td><td>azerty</td></tr>
+	<tr><td>carol</td><td>letmein</td></tr>
+</tbody></table>
+
+<br>
+<hr>
+
+<h2>TFTP</h2>
+
+<ul>
+<li>Lire <a href="http://en.wikipedia.org/wiki/Trivial_File_Transfer_Protocol">l'article Wikipédia sur le protocole TFTP</a>.
+<ul>
+<li>A quoi sert le protocole TFTP ?</li>
+</ul></li>
+</ul>
+
+<p>Défini en 1980, le protocole TFTP (Trivial File Transfer Protocol) est un protocole simplifié de transfert de fichiers. </p>
+<p>La dernière version de ce protocole est la version 2, définie dans <a href="http://tools.ietf.org/html/rfc1350">RFC 1350</a> Pour ce projet, seul le mode de transfert binary sera utilisé.</p><p><br>
+
+
+</p><p><b>À faire:</b>
+</p><ol>
+<li>Lire la <a href="http://tools.ietf.org/html/rfc1350">RFC 1350</a> (<a href="http://abcdrfc.free.fr/rfc-vf/rfc1350.html">version française</a>).</li>
+<li>Récupérer l'archive des données TFTP sans en modifier les fichiers ou répertoires
+</li><li>Lancer le serveur : TFTPServer arg0 arg1 (avec arg0 = 1 pour la gestion de perte, sinon 0, et arg1 = port)</li>
+<li>Programmer (en Java) un client TFTP (avec et sans gestion de perte 
+de données) qui se connecte au serveur TFTP, et récupère ou envoie des 
+fichiers sur le serveur.</li>
+</ol>
+
+<p> Des fichiers test sont fournis avec le serveur pour tester d'une 
+part la récupération de fichiers présents sur le serveur et d'autre 
+part, l'envoi de fichiers sur le serveur.</p>
+<ul>
+<li> Pour tester la récupération de fichiers, lancer le client à partir du répertoire get/.</li>
+<li> Pour tester l'envoi de fichiers, lancer le client à partir du répertoire put/ contenant les fichiers tests.</li>
+</ul>
+
+<br>
+
+<hr>
+
+<h2>Envoi du projet :</h2>
+<ul>
+	<li>Avant le 31/03 à 23h55.</li>
+	<li>Sur l'arche de l'Université de Lorraine, section 6.</li>
+	<li>2 archives sous la forme :  POP3-nom1-nom2-nom3 et TFTP-nom1-nom2-nom3</li>
+	<li>Dans chaque archive, mettre vos fichiers .class et .java</li>
+	<li>Dans les fichiers .java:
+	<ul>
+		<li>Expliquer dans un commentaire tout en haut comment lancer le programme (paramètres éventuels)</li>
+		<li>Prévoir la possibilité de modifier les paramètres (serveur, port, login, password)</li>
+	</ul></li>
+	<li>Un rapport au format PDF comprenant une description du travail 
+réalisé, des difficultés rencontrées et la répartition du travail entre 
+les membres du groupe.</li>
+</ul>
+
+</body></html>

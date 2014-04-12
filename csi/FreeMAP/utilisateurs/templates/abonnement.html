@@ -1,0 +1,24 @@
+{% extends 'layout/utilisateurs.html' %}
+
+{% block content %}
+<section data-role="content" class="align_center">
+    <h3 class="new-font">Formulaire du Futur {{ nb }}e Abonné</h3>
+    <br />
+
+    <form action="{% url abonnement %}" method="post" data-ajax="false">{% csrf_token %}
+        {{ form.as_table }}
+
+        <br />
+        <br />
+
+        <input type="submit" value="S'abonner" />
+
+        <br />
+        <hr />
+
+        <p class="condition">
+            Le prix est de {{ trimestre.prix_panier|floatformat:2 }} € par panier.
+        </p>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,4 @@
+mai 06, 2013 4:18:18 PM java.util.logging.LogManager$RootLogger log
+INFO: Répertoire de travail: /mnt/data/workspace/miage-m1/java/CaptainDuke/dist
+mai 06, 2013 4:18:33 PM java.util.logging.LogManager$RootLogger log
+INFO: Quitter le jeu

@@ -1,0 +1,1430 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 1
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+\size giant
+Rapport de projet
+\begin_inset Newline newline
+\end_inset
+
+Jeu de société
+\end_layout
+
+\begin_layout Author
+
+\series bold
+\size larger
+Médéric HURIER
+\series default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+mederic.hurier@etu.univ-lorraine.fr
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/.lyx/clipart/lorraine.png
+	scale 300
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Année 2012-2013
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Présentation du sujet
+\end_layout
+
+\begin_layout Standard
+Testez vos compétences en programmation lors d'une série d'histoires et
+ de défis !
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vous incarnez un commandant de vaisseau spatial du nom de Capitaine Duke,
+ et vous êtes en charge d'une périlleuse mission qui vous emmènera au confins
+ du système solaire.
+ Pour mener à bien votre objectif vous devrez répondre aux attentes de votre
+ équipage grâce aux outils informatiques dont vous disposez.
+ Les demandes peuvent vous semblez farfelues, mais du bien être de l'équipage
+ dépend la réussite de la mission.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Votre adresse ne sera pas mesurée uniquement par votre rapidité, mais aussi
+ par votre précision et votre assurance.
+ Vous devez faire le moins d'essais possibles pour arriver à une réponse
+ acceptable, et vos performances seront mesurées pour que vous puissiez
+ vous en vanter.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/need you.gif
+	display false
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Utilisation
+\end_layout
+
+\begin_layout Subsection
+Lancement du jeu
+\end_layout
+
+\begin_layout Standard
+Le jeu se lance en ligne de commande à partir du dossier d'archive:
+\end_layout
+
+\begin_layout Itemize
+dans un terminal, placer vous dans le répertoire 
+\begin_inset Quotes sld
+\end_inset
+
+dist
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+taper la commande suivante pour lancer le programme:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+java -jar CaptainDuke.jar
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+
+\series bold
+Attention !
+\series default
+ la musique démarre une seconde après l'affichage de la fenêtre.
+ Pour désactiver la musique, ajouter le drapeau 
+\begin_inset Quotes sld
+\end_inset
+
+-nomusic
+\begin_inset Quotes srd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+java -jar CaptainDuke.jar -nomusic
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il n'y a pas de paramètres supplémentaires.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En cas de problème, contacter moi à l'adresse suivante: mederic.hurier@freaxmind.p
+ro.
+\end_layout
+
+\begin_layout Subsubsection*
+(option) Compiler vous même le programme
+\end_layout
+
+\begin_layout Itemize
+dans un terminal, placer vous dans le répertoire 
+\begin_inset Quotes sld
+\end_inset
+
+src
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+compiler la classe principale en tapant:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+javac CaptainDuke.java
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+copier le répertoire 
+\begin_inset Quotes sld
+\end_inset
+
+DATA
+\begin_inset Quotes srd
+\end_inset
+
+ de l'archive dans le dossier 
+\begin_inset Quotes sld
+\end_inset
+
+src
+\begin_inset Quotes srd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+lancer le programme en ajoutant les bibliothèques nécessaires au classpath
+ lors de l'exécution:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+java -cp "../lib/sqlite-jdbc-3.7.2.jar:." CaptainDuke
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+(option) Lancement du serveur de scores
+\end_layout
+
+\begin_layout Standard
+Le serveur est écrit en Python et nécessite la bibliothèque 
+\begin_inset Quotes sld
+\end_inset
+
+bottle
+\begin_inset Quotes srd
+\end_inset
+
+ pour fonctionner.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vous pouvez vous référer à cette page pour obtenir la procédure d'installation:
+\end_layout
+
+\begin_layout Standard
+http://bottlepy.org/docs/dev/tutorial.html#installation
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Il suffit alors de lancer le programme en tapant dans le dossier 
+\begin_inset Quotes sld
+\end_inset
+
+server
+\begin_inset Quotes srd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+python scoreboard.py
+\end_layout
+
+\begin_layout Itemize
+consulter la page 
+\begin_inset Quotes sld
+\end_inset
+
+http://127.0.0.1:9000
+\begin_inset Quotes srd
+\end_inset
+
+ pour voir si le serveur est bien lancé.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Le serveur n'est PAS nécessaire au fonctionnement du jeu
+\series default
+, mais vous ne pourrez pas récupérer ou poster des scores.
+\end_layout
+
+\begin_layout Subsection
+Déroulement d'une partie
+\end_layout
+
+\begin_layout Standard
+Au lancement du programme, la fenêtre suivante apparaît:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/captures/launcher.png
+	display false
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Fenêtre de lancement
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De cette fenêtre, vous pouvez lancer une nouvelle partie une ou continuer
+ la dernière partie jouée.
+ Vous pouvez également afficher les meilleurs scores (si le serveur est
+ lancé), et consulter la page d'aide.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La difficulté change le nombre d'essais de départ et les bonus en fin de
+ mission:
+\end_layout
+
+\begin_layout Itemize
+facile = 20 essais au départ mais aucun bonus
+\end_layout
+
+\begin_layout Itemize
+normal = 10 essais au départ, bonus de 20 essais en fin de scénario
+\end_layout
+
+\begin_layout Itemize
+difficile = 5 essais au départ, bonus de 50 essais en fin de scénario
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le jeu est difficile ! Je vous invite à commencer avec la difficulté 
+\begin_inset Quotes sld
+\end_inset
+
+FACILE
+\begin_inset Quotes srd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois la partie chargée, la fenêtre suivante remplace le lanceur:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/captures/game.png
+	display false
+	height 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Fenêtre de jeu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les éléments sont:
+\end_layout
+
+\begin_layout Enumerate
+Zone de texte éditable ou vous devrez coder la (les) fonction(s) permettant
+ de passer les tests
+\end_layout
+
+\begin_layout Enumerate
+Test unitaire servant à vérifier votre fonction
+\end_layout
+
+\begin_layout Enumerate
+Scénario nécessitant de créer une fonction
+\end_layout
+
+\begin_layout Enumerate
+Boutons pour exécuter votre code:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+\begin_inset Quotes sld
+\end_inset
+
+Faire un essai
+\begin_inset Quotes srd
+\end_inset
+
+ diminue votre nombre d'essai de 1
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Quotes sld
+\end_inset
+
+J'ai de la chance
+\begin_inset Quotes srd
+\end_inset
+
+ diminue votre nombre d'essai de 5, mais double votre score final
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Indicateurs de performances:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+le premier nombre est votre nombre d'essais restants
+\end_layout
+
+\begin_layout Enumerate
+le deuxième nombre est un chronomètre en seconde
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Boutons pour sauvegarder ou quitter la partie
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le chronomètre commence quand vous cliquez sur le bouton 
+\begin_inset Quotes sld
+\end_inset
+
+Commencer
+\begin_inset Quotes srd
+\end_inset
+
+ (qui prend la place du bouton 
+\begin_inset Quotes sld
+\end_inset
+
+Sauvegarder
+\begin_inset Quotes srd
+\end_inset
+
+ en attendant votre signal).
+ A chaque essai, une boîte de dialogue apparaît avec une erreur ou un message
+ de félicitation si vous avez réussi le scénario.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vous pouvez afficher des variables en utilisant 
+\begin_inset Quotes sld
+\end_inset
+
+System.out.println
+\begin_inset Quotes srd
+\end_inset
+
+ comme vous le feriez en Java.
+ Le contenu de sortie est alors ajouté à la boîte de dialogue.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le jeu comporte 6 scénarios, mais il est possible d'en rajouter en éditant
+ la base de données contenue dans 
+\begin_inset Quotes sld
+\end_inset
+
+DATA/scenario.sqlite
+\begin_inset Quotes srd
+\end_inset
+
+.
+ Une fois le jeu terminé, une invite vous propose de poster votre score.
+ Ils sont ensuite consultable sur le site ou via l'interface de jeu depuis
+ le lanceur.
+\end_layout
+
+\begin_layout Section
+Modélisation
+\end_layout
+
+\begin_layout Subsection
+Couche modèle
+\end_layout
+
+\begin_layout Standard
+La couche modèle comporte les données de l'application: une partie, des
+ scénarios, des récompenses et des scores.
+ Toutes ces données sont sérialisables pour être sauvegardé.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/models.png
+	display false
+	width 15cm
+	height 7cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Diagramme de classe de la couche modèle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Scenario
+\series default
+ est la description d'une mission avec son histoire et le test associé.
+ Les scénarios sont stockées dans une base de données SQLite avec le composant
+ JDBC et ont peut les récupérer en utilisant la méthode findById.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Achievement
+\series default
+ est une récompense obtenue ou en cours d'acquisition pour un scénario.
+ La classe contient des attributs pour qualifier si la récompense est un
+ succès ou non, si elle est terminée, le chronomètre actuel et les essais
+ qui ont été fait.
+ Une fois la récompense obtenue, on calcule le score que le joueur a obtenu
+ avec la fonction computeScore.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Game
+\series default
+ est une partie du joueur, elles contient les récompenses.
+ C'est cet objet qui est sauvegardé, et qui provoque l'enregistrement de
+ tous les attributs grâce aux classes ObjectInputStream et ObjectOutputStream.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Enfin, la classe 
+\series bold
+Score
+\series default
+ contient les informations du tableau des scores mais n'est pas sérialisable.
+\end_layout
+
+\begin_layout Subsection
+Couche composant
+\end_layout
+
+\begin_layout Standard
+La couche composant regroupe des classes utilitaires et des données non
+ persistantes de l'application.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/components.png
+	display false
+	width 15cm
+	height 5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Diagramme de classe de la couche composant
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le coeur du jeu est la classe 
+\series bold
+CodeChecker
+\series default
+ qui permet de vérifier le code de l'utilisateur grâce à la méthode 
+\series bold
+check
+\series default
+ en revoyant une instance de 
+\series bold
+CheckResult
+\series default
+.
+ Si l'utilisateur a fait une erreur, l'objet contient une erreur (compilation,
+ exécution ou assertion) qui sera affichée à l'utilisateur.
+ On ajoute également le contenu de la sortie du programme.
+\end_layout
+
+\begin_layout Standard
+Si le programme rencontre un cas qu'il ne sait pas gérer, ou si un composant
+ est défaillant, la classe envoie une exception de type GameException qui
+ provoque l'arrêt immédiat de l'application.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En plus de cette classe, le ConnectionHandler est un singleton permet de
+ stocker une instance unique de connection à la base de données SQLite.
+\end_layout
+
+\begin_layout Subsection
+Couche contrôle
+\end_layout
+
+\begin_layout Standard
+La couche contrôle regroupe les règles du jeu et l'enchaînement des actions.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/controllers.png
+	display false
+	width 15cm
+	height 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Diagramme de classe de la couche contrôle
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le premier contrôleur appelé est 
+\series bold
+LauncherController
+\series default
+ qui gère la première fenêtre du programme.
+ Il peut créer une nouvelle partie ou relancer la dernière jouée en passant
+ ensuite le relai à la classe GameController.
+ Il gère une interface graphique LauncherFrame (voir couche interface),
+ qui est affichée lors de l'appel à la méthode run et stoppé à l'appel de
+ la méthode stop.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le contrôleur principal est 
+\series bold
+GameController
+\series default
+, qui permet d'effectuer toutes les actions à partir de l'interface de jeu:
+ charger/sauvegarder une partie, charger un scénario, faire un essai ou
+ poster un score.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les deux autres contrôleurs 
+\series bold
+MusicController
+\series default
+ et 
+\series bold
+HighScoreController
+\series default
+ contrôlent respectivement l'enchaînement des musiques jouées et la récupération
+ et l'envoie de score au serveur de score.
+\end_layout
+
+\begin_layout Subsection
+Couche interface
+\end_layout
+
+\begin_layout Standard
+La couche interface est responsable de l'affichage des composants et de
+ l'interception des événements.
+ Note: les attributs SWING sont masqués pour la clarté du diagramme.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/views.png
+	display false
+	width 15cm
+	height 6cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Diagramme de classe de la couche interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le jeu comporte deux fenêtres, la première est 
+\series bold
+LauncherFrame
+\series default
+ qui comportent les événements liés aux boutons de la première fenêtre.
+ La seconde est 
+\series bold
+GameController
+\series default
+, qui s'occupe de la fenêtre de jeu.
+ Cette fenêtre dispose également de méthodes pour afficher les résultats
+ (fin de jeu, fin de scénario, résultat d'un test).
+\end_layout
+
+\begin_layout Section
+Implémentation
+\end_layout
+
+\begin_layout Subsection
+Choix
+\end_layout
+
+\begin_layout Subsubsection*
+Architecture
+\end_layout
+
+\begin_layout Standard
+Le projet est découpé en suivant l'architecture 3-tiers MVC (Model-View-Controll
+er) pour répartir logiquement le rôle de chaque classe.
+ Il n'y a pas d'interfaces permettant de diminuer les dépendances entre
+ couches, mais ces techniques ne sont pas requises pour un projet de ce
+ type.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les dépendances avec les autres bibliothèques Java ont été maîtrisées.
+ A de rares exceptions, chaque bibliothèque ne dépend que d'une seule couche
+ (modèle pour java.io, composants pour java.lang.reflect ...) afin de limiter
+ les contextes d'appel.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename img/mvc.png
+	display false
+	height 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Persistance des données
+\end_layout
+
+\begin_layout Standard
+Les données sont sauvegardées de deux manières:
+\end_layout
+
+\begin_layout Itemize
+la partie du joueur est sauvegardée via sérialization en utilisant les classes
+ ObjectInputStream pour la lecture et ObjectOutputStream pour l'écriture
+\end_layout
+
+\begin_layout Itemize
+les scénarios sont stockées dans une base de données au format SQLite grâce
+ à JDBC
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans le cas des scénarios, le but était de rendre la base des missions extensibl
+e sans avoir besoins des classes du programme pour les manipuler.
+ Grâce à SQL et JDBC, ces données sont indépendantes du programme.
+ Il suffit d'utiliser un outil comme SQLitebrowser pour ajouter de nouvelles
+ histoires, qui seront proposées au lancement de la partie.
+ On peut également envisager un éditeur de scénario, comme cela se fait
+ dans les jeux vidéos.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour la sauvegarde de la partie, l'indépendance n'est pas requise et est
+ au contraire indésirable.
+ Même si l'utilisateur peut facilement changer les données de sérialisation,
+ cela n'est pas évident pour un novice en informatique.
+ De plus, la sérialisation est très facile à implémenter et ne informatique
+ pas d'association entre les objets et leur stockage.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les deux solutions sont simples et faciles à maintenir.
+ Elles répondent très bien au problème de ces deux types d'information.
+\end_layout
+
+\begin_layout Subsubsection*
+Test du code de l'utilisateur
+\end_layout
+
+\begin_layout Standard
+Tester un code dynamiquement n'est pas naturel pour un langage statique
+ comme Java.
+ C'est pourtant une fonctionnalité essentielle pour l'application.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Afin de réaliser ce module, j'ai utilisé les outils de la bibliothèque java.lang.r
+eflect et javax.tools.JavaCompiler.
+ Ces deux outils manipulent le compilateur Java et la structure des classes
+ pour créer un fichier temporaire, le compiler, l'importer, instancier la
+ classe qu'il comporte et enfin exécuter les tests.
+ Les deux conditions sont que le nom du fichier soit unique et que l'utilisateur
+ dispose d'un JDK installé.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une autre solution de secours serait l'utilisation de scripts Bash qui remplisse
+nt le même rôle.
+ Toutefois, la solution entièrement en Java a été préférée car elle ne demande
+ pas de manipuler du texte, mais des composants du paradigme objet.
+\end_layout
+
+\begin_layout Subsection
+API Java
+\end_layout
+
+\begin_layout Standard
+Au cours du projet, ces élements de l'API Java ont été utilisés:
+\end_layout
+
+\begin_layout Itemize
+java.util.logging dans les contrôleurs pour afficher les exceptions et l'avancemen
+t
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe principale, tous les contrôleurs
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+java.io.Serializable
+\series default
+ pour les modèles dont la classe Game est le point d'entrée
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+tous les modèles sauf Score
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+java.io.ObjectOutputStream et java.io.ObjectInputStream
+\series default
+ pour sauvegarder une partie
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe models.Game
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+java.sql
+\series default
+ (dont JDBC-SQLite) pour sauvegarder les scénarios et en ajouter facilement
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe models.Game
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+java.net pour récupérer et poster les scores via HTTP
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe controllers.HighScoreController
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+javax.tools et java.lang.reflect
+\series default
+ pour tester le code de l'utilisateur
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe components.CodeChecker
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+javax.sound pour jouer de la musique de manière asynchrone
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe controllers.MusicController
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+javax.swing
+\series default
+ pour l'interface graphique
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+dossier views
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+java.util.timer
+\series default
+ pour gérer le chronomètre de manière asynchrone
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe views.GameFrame
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Math.log pour le calcul des scores en fonction du temps
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+classe models.Achievement
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+org.junit pour testers les composants et les scénarios
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+dossier test
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+java.util.LinkedList et java.util.ArrayList pour les collections
+\end_layout
+
+\begin_layout Subsection
+Packages
+\end_layout
+
+\begin_layout Standard
+L'application est découpée logiquement et physiquement selon les couches
+ de la partie modélisation:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/diagrammes/packages.png
+	display false
+	width 15cm
+	height 5cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Graphique des paquets utilisés
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les paquets du projet sont identifiés par un smiley.
+ Les associations de dépendances montre les principaux paquets Java utilisés.
+ Par exemple, le paquet 
+\begin_inset Quotes sld
+\end_inset
+
+views
+\begin_inset Quotes srd
+\end_inset
+
+ utilise les paquets 
+\begin_inset Quotes sld
+\end_inset
+
+java.swing
+\begin_inset Quotes srd
+\end_inset
+
+ et 
+\begin_inset Quotes sld
+\end_inset
+
+java.awt
+\begin_inset Quotes srd
+\end_inset
+
+ qui permettent de coder des interfaces graphiques en Java.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le programme s'organise donc autour d'une architecture MVC très simple,
+ où chaque paquet est responsable d'un composant du projet.
+\end_layout
+
+\begin_layout Section
+Conclusion
+\end_layout
+
+\begin_layout Subsection
+Bilan
+\end_layout
+
+\begin_layout Standard
+J'ai appris le Java en 2e année de BTS, et j'en suis à ma 5e année d'étude
+ avec Java.
+ Je me suis aussi beaucoup intéressé aux langages orientés objets comme
+ Python, Ruby ou Groovy.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mon bilan personnel pour ce projet est plutôt bon: le jeu fonctionne et
+ comporte de nombreux composants de l'API Java sans trop inclure de dépendances
+ avec des bibliothèques externes.
+ C'est donc un bon tour d'horizon de ce qu'offre naturellement Java (interface
+ graphique, méta-programmation, multi-tâche, persistance, multimédia ...).
+ J'ai beaucoup aimé coder la classe vérifiant le code de l'utilisateur (componen
+ts.CodeChecker), qui m'a permis d'explorer des fonctions avancées de Java.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Je vois cependant deux points négatifs à mon jeu:
+\end_layout
+
+\begin_layout Itemize
+Pour réellement être un jeu de société, il aurait fallu qu'il soit disponible
+ en ligne pour que le code puisse être revu, commenté et noté.
+ En se jouant seul, il perd sa dimension sociale.
+\end_layout
+
+\begin_layout Itemize
+L'interface graphique n'est pas aussi jolie que ce que j'aurai souhaité.
+ Ceci est dû à une difficulté que j'ai rencontré et que je détaille dans
+ la partie suivante.
+\end_layout
+
+\begin_layout Subsection
+Difficultés rencontrées
+\end_layout
+
+\begin_layout Standard
+Je prend toujours le pari d'utiliser des technologies innovantes dans mes
+ projets afin de m'investir davantage et de capitaliser pour mon avenir.
+ Je m'en suis toujours bien sortie, mais j'ai eu une déception avec ce projet.
+\end_layout
+
+\begin_layout Standard
+En voulant utiliser l'API JavaFX pour la partie interface graphique, je
+ me suis heurté à un gros manque de maturité et des lenteurs sur ma plateforme
+ privilégiée (Linux).
+ Les fonctions étaient pourtant intéressantes (style au format CSS, API
+ plus cadrante), mais j'ai du faire machine arrière tardivement pour revenir
+ à une solution plus fiable.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Suite à ce problème, je n'ai pas rencontré de difficultés majeures.
+ Je comprend maintenant l'intérêt de Java pour une API de jeu comme sous
+ Android: c'est un langage structurant avec lequel il est difficile d'avoir
+ des erreurs.
+ A mon goût, ce n'est cependant pas l'environnement le plus créatif.
+ Je pense que les plateformes Web et les bibliothèques de développement
+ rapide comme PyGame restent des technologies plus appropriées pour répondre
+ au sujet.
+\end_layout
+
+\end_body
+\end_document

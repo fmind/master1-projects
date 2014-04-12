@@ -1,0 +1,21 @@
+<meta name="author" content="Médéric HURIER, Omar EDDASSER" lang="fr"/>
+<meta name="generator" content="Django framework">
+<meta name="robots" content="noindex, nofollow" />
+
+<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Freckle+Face' />
+<link rel="stylesheet" href='http://code.jquery.com/mobile/1.2.0/jquery.mobile.structure-1.2.0.min.css' />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/freemap.min.css" />
+<link rel="stylesheet" href="{{ STATIC_URL }}css/main.css" />
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script type="text/javascript">	
+    $(document).bind("mobileinit", function() {
+        $.extend($.mobile, {
+            defaultPageTransition: 'none',
+            loadingMessage: "Chargement ...",
+            pageLoadErrorMessage: "Erreur lors du chargement de la page"
+        });
+    });
+</script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>

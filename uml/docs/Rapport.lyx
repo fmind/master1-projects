@@ -1,0 +1,2000 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language french
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format pdf2
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1in
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation 0mm
+\quotes_language swedish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bullet 1 0 9 -1
+\bullet 2 0 0 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 1
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+
+\series bold
+\size giant
+Rapport de Conception
+\end_layout
+
+\begin_layout Author
+
+\series bold
+\size larger
+Médéric HURIER
+\series default
+\size default
+
+\begin_inset Newline newline
+\end_inset
+
+mederic.hurier@etu.univ-lorraine.fr
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/.lyx/clipart/lorraine.png
+	scale 300
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+Année 2012-2013
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Analyse du besoin
+\end_layout
+
+\begin_layout Subsection
+Expression
+\end_layout
+
+\begin_layout Standard
+L'objectif du projet est la modélisation d'un logiciel permettant à plusieurs
+ joueurs de disputer une partie de Monopoly sur un même terminal en mode
+ texte.
+ Monopoly est le jeu où l'on vend achète ou loue des propriétés de manière
+ profitable, afin que les joueurs puissent s'enrichir (le plus riche d'entre
+ eux étant déclaré vainqueur).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les joueurs partent de la case 
+\begin_inset Quotes sld
+\end_inset
+
+Départ
+\begin_inset Quotes srd
+\end_inset
+
+ et déplacent leur pion sur le plateau en fonction du résultat des dés.
+ Lorsqu'un joueur parvient sur la case d'une propriété à vendre, il peut
+ l'acheteur à la banque.
+ Si il ne désire pas le faire, la propriété est proprosée aux autres joueurs
+ et ira au plus offrant.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lorsqu'un joueur s'arrête sur la propriété d'un autre joueur, il doit lui
+ verser un loyer.
+ La construction de maisons ou d'hôtels augmente considérablement le montant
+ des loyers.
+ Il est donc sage de construire sur ses terrains.
+ Les cases chance et communauté permettent de tirer une carte dont il faut
+ suivre les instructions.
+ il arrive aussi que l'on se retrouve en Prison.
+ Le but du jeu est d'être le dernier joueur à rester en jeu, c'est à dire
+ le dernier n'ayant pas fait faillite.
+\end_layout
+
+\begin_layout Subsection
+Cas d'utilisation
+\end_layout
+
+\begin_layout Standard
+Le déroulement du jeu peut être séparé en un traitement automatique et un
+ traitement interactif.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le traitement automatique du Monopoly est basé sur des règles de jeu qui
+ s'appliquent systématiquement et sans que le joueur puisse intervenir.
+ L'utilisateur constate simplement le déroulement des actions qui sont effectués
+ par le système.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le traitement interactif donne au joueur la possibilité d'acheter et de
+ gérer ses biens lorsque c'est son tour.
+ Il n'est pas limité en nombre d'interaction, mais son choix peut être réduit
+ en fonction de sa situation.
+ Chacune de ces interactions peut être vue comme un service rendu par le
+ système à l'utilisateur.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le diagramme ci-dessous représente la partie interactive du jeu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Diagramme de cas d'utilisation.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Diagramme des cas d'utilisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Au lancement du logiciel, le propriétaire du jeu doit inscrire entre 2 à
+ 6 joueurs pour commencer la partie.
+ Tant qu'il n'a pas débuter une nouvelle partie, il peut décider de quitter
+ le jeu.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois la partie commencée, les joueurs vont jouer leur tour jusqu'à ce
+ qu'il n'en reste plus qu'un.
+ A chaque tour, le joueur doit obligatoirement lancer les dés pour se déplacer
+ sur le plateau.
+ Il peut ensuite choisir parmi une série d'action pour gérer ces biens,
+ et termine forcément son tour en passant la main au joueur suivant ou en
+ quittant la partie.
+ 
+\end_layout
+
+\begin_layout Subsection
+Scénarios nominaux
+\end_layout
+
+\begin_layout Paragraph
+inscrire les joueurs
+\end_layout
+
+\begin_layout Description
+objectif ajouter un joueur (nom et couleur de pion) en vue de lancer une
+ nouvelle partie.
+\end_layout
+
+\begin_layout Description
+acteurs propriétaire du jeu
+\end_layout
+
+\begin_layout Description
+préconditions pas plus de 6 joueurs ont déjà été inscrits
+\end_layout
+
+\begin_layout Description
+conditions le nom et la couleur du pion du joueur doivent être unique
+\end_layout
+
+\begin_layout Paragraph
+commencer le jeu
+\end_layout
+
+\begin_layout Description
+objectif démarrer une nouvelle partie avec les joueurs inscrits jusqu'à
+ ce qu'un gagnant ai été désigné.
+\end_layout
+
+\begin_layout Description
+acteurs propriétaire du jeu
+\end_layout
+
+\begin_layout Description
+préconditions au moins 2 joueurs sont inscrits au jeu
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+quitter le jeu
+\end_layout
+
+\begin_layout Description
+objectif fermer le logiciel si le propriétaire de jeu ne souhaite plus jouer
+ au Monopoly.
+ 
+\end_layout
+
+\begin_layout Description
+acteurs propriétaire du jeu
+\end_layout
+
+\begin_layout Description
+préconditions aucune
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+jouer le tour
+\end_layout
+
+\begin_layout Description
+objectif permettre au joueur dont c'est le tour d'acheter et de vendre et
+ d'obtenir des informations concernant sa situation.
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions ne pas avoir abandonner et ne pas être en faillite
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+lances les dés
+\end_layout
+
+\begin_layout Description
+objectif déterminer le nombre de case dont le pion du joueur va avancer
+ et si il s'agit d'un double pour rejouer.
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions aucune
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+acheter
+\end_layout
+
+\begin_layout Description
+objectif acheter le bien courant, il peut s'agit d'un titre de propriété,
+ d'une maison ou d'un hôtel selon le contexte.
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions le bien courant doit être achetable
+\end_layout
+
+\begin_layout Description
+conditions le joueur doit avoir assez d'argent et avoir le permi de construire
+\end_layout
+
+\begin_layout Paragraph
+vendre une maison
+\end_layout
+
+\begin_layout Description
+objectif échanger une maison à la banque contre sa valeur d'achat
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions le joueur doit disposer d'une maison
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+vendre un hôtel
+\end_layout
+
+\begin_layout Description
+objectif échanger un hôtel à la banque contre sa valeur d'achat
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions le joueur doit disposer d'un hôtel
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+vendre un titre
+\end_layout
+
+\begin_layout Description
+objectif échanger un titre de propriété a un autre joueur.
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions le joueur doit disposer d'une maison
+\end_layout
+
+\begin_layout Description
+conditions l'acheteur du titre doit accepter la proposition et disposer
+ d'assez d'argent
+\end_layout
+
+\begin_layout Paragraph
+passer au joueur suivant
+\end_layout
+
+\begin_layout Description
+objectif passer la main au joueur suivant.
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions aucune
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Paragraph
+quitter la partie
+\end_layout
+
+\begin_layout Description
+objectif retirer le joueur de la partie.
+\end_layout
+
+\begin_layout Description
+acteurs joueur courant
+\end_layout
+
+\begin_layout Description
+préconditions aucune
+\end_layout
+
+\begin_layout Description
+conditions aucune
+\end_layout
+
+\begin_layout Section
+Conception
+\end_layout
+
+\begin_layout Subsection
+Modèle du domaine
+\end_layout
+
+\begin_layout Standard
+Monopoly est avant tout un produit concret composé d'un plateau, de pièces,
+ de pions et de cartes.
+ Pour ce type de problème, le paradigme de la programmation objet permet
+ de représenter facilement cette réalité à l'aide de classes, d'attributs
+ et de méthodes.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le diagramme de classe ci-dessous schématise le modèle final du jeu de société.
+ C'est couche comprend tous les objets nécessaires à la description d'une
+ situation en cours de partie.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La représentation a été optimisé au cours de l'élaboration.
+ Les versions intermédiaires, que vous pouvez consulter dans l'archive,
+ montrent l'évolution de la représentation au cours des étapes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Modèle de domaine.png
+	display false
+	scale 38
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Modèle du domaine
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le point central du modèle est la classe 
+\noun on
+Partie
+\noun default
+, elle regroupe tous les éléments du jeu dont les joueurs, le banquier et
+ le plateau.
+ Son rôle est de gérer les tours de jeu et d'effectuer plusieurs actions
+ sur le joueur actuel (emprisonnement, abandon ou toucher un salaire).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le 
+\noun on
+Plateau
+\noun default
+ de jeu est composé de deux paquets de carte, les cartes chances et les
+ cartes caisses communautaire.
+ Chaque carte décrit une action contraignante pour le joueur lorsque celui
+ ci pioche une carte:
+\end_layout
+
+\begin_layout Itemize
+les cartes 
+\noun on
+Chance
+\noun default
+ déplacent le joueur d'un certain nombre de case, en avant, en arrière ou
+ sur un case précise.
+\end_layout
+
+\begin_layout Itemize
+les cartes 
+\noun on
+Caisse Communautaire
+\noun default
+ envoie une amende ou un bonus au joueur qui s'applique immédiatement.
+\end_layout
+
+\begin_layout Standard
+En plus de ces éléments, le plateau comporte une liste de 
+\noun on
+case
+\noun default
+ avec un nom pour situer le joueur.
+ L'argent des amendes et des impôts est stocké au centre du plateau.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'utilisateur de l'application est un 
+\noun on
+joueur
+\noun default
+ identifié par un nom et une couleur de pion.
+ Il se déplace sur le plateau, gagne et dépense de l'argent et peut abandonner,
+ être emprisonné ou être faillite si il n'a plus assez d'argent.
+\end_layout
+
+\begin_layout Standard
+Le joueur est associé à une classe 
+\noun on
+lance
+\noun default
+ qui matérialise son dernier lancé de 2 dés.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+L'acteur système principal du modèle est le 
+\noun on
+banquier.
+ 
+\noun default
+Ce dernier est responsable des titres de propriété, de faire signer des
+ contrats au joueur et de gérer les batiments.
+ Un joueur doit forcément passer par lui pour gérer ses biens.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un 
+\noun on
+titre de propriété 
+\noun default
+est un élément abstrait descripteur d'un bien.
+ Il se différencie en 3 types: 
+\noun on
+rue
+\noun default
+, 
+\noun on
+gare
+\noun default
+ et 
+\noun on
+compagnie de distribution
+\noun default
+.
+ Chaque objet peut renvoyer un loyer de séjour en fonction des contrats
+ associés au titre.
+\end_layout
+
+\begin_layout Standard
+Le 
+\noun on
+contrat
+\noun default
+ lie un joueur et un titre de propriété.
+ Il est géré par la banque, et contient également le nombre de maisons et
+ d'hôtel présent sur le terrain.
+ Si un contrat ne peut être passé, la banque renvoie un objet 
+\noun on
+contratexception
+\noun default
+.
+\end_layout
+
+\begin_layout Subsection
+Classes participantes
+\end_layout
+
+\begin_layout Standard
+Le modèle de domaine est étendu par les classes participantes de l'application.
+ Elles contribuent à gérer les évènements extérieurs (vues) et le déroulement
+ du jeu (contrôleurs).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette logique correspond à une architecture MVC modifiée.
+ Dans un MVC classique, les vues ne connaissent pas les contrôleurs et les
+ communications ne se font que par des fonctions évènementielles basées
+ sur le patron de conception 
+\begin_inset Quotes sld
+\end_inset
+
+Observateur
+\begin_inset Quotes srd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans ce logiciel, les interfaces sont rendues interchangeables grâce au
+ mécanisme d'interface objet.
+ La dépendance des vues envers les contrôleurs est forte, mais la dépendance
+ inverse est faible.
+ Ainsi, il est possible de remplacer des interfaces en ligne de commande
+ par des interfaces graphiques ou réseaux.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ce diagramme de classe décrit les deux couches intervenant dans le processus
+ de jeu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Classes participantes.png
+	display false
+	scale 45
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Classes participantes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Les couches se divisent en deux modules logiques, une pour la gestion du
+ lancement du jeu et l'autre pour la gestion des parties.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Au lancement du logiciel, la classe 
+\noun on
+MonopolyController
+\noun default
+ gère l'inscription des joueurs, le lancement d'une nouvelle partie ou l'action
+ de quitter le jeu.
+ Elle communique avec la classe 
+\noun on
+CliMonopolyUI
+\noun default
+ via l'interface 
+\noun on
+MonopolyUI
+\noun default
+ qui peut afficher un menu, renvoyer le nom d'un joueur ou la couleur d'un
+ pion.
+ Avant de débuter une partie, une partie de lancés de dés détermine quel
+ est le joueur qui va commencer.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois la partie lancée, la classe 
+\noun on
+PartieController
+\noun default
+ prend le relai.
+ Son rôle est de gérer toutes les interactions avec le joueur (acheter,
+ vendre, passer et quitter) et de gérer les tours de jeu.
+ Elle communique avec la classe 
+\noun on
+CliPartieUI
+\noun default
+ via l'interface 
+\noun on
+PartieUI
+\noun default
+ qui renvoie les informations nécessaire au jeu.
+\end_layout
+
+\begin_layout Standard
+Ces classes utilise la classe modèle 
+\noun on
+Partie
+\noun default
+ pour accéder à la description intégrale du jeu.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La classe 
+\noun on
+PlateauController
+\noun default
+ a pour seul but de gérer les actions sur les cases.
+ La méthode dispatch() est la seul méthode publique disponible, elle se
+ charge d'appeler l'action de la case correspondante selon la position du
+ joueur courant.
+\end_layout
+
+\begin_layout Standard
+Cette modélisation évite d'implémenter la logique de l'application au niveau
+ des couches modèles (les cases par exemple).
+ L'échange avec la classe 
+\noun on
+PartieController
+\noun default
+ peut être vu comme un proxy, un patron de conception qui relaie une partie
+ des traitements à son contrôleur pair.
+\end_layout
+
+\begin_layout Subsection
+Interactions
+\end_layout
+
+\begin_layout Subsubsection
+Initialisation
+\end_layout
+
+\begin_layout Standard
+Le diagramme de classe suivant schématise l'initialisation de l'application.
+ Il va du lancement du logiciel jusqu'au premier tour du joueur.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Initialisation.png
+	display false
+	scale 35
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Initialisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La première action du 
+\begin_inset Quotes sld
+\end_inset
+
+main
+\begin_inset Quotes srd
+\end_inset
+
+ de l'application est de créer un contrôleur de jeu 
+\noun on
+MonopolyController
+\noun default
+ et de lui associer son interface graphique, 
+\noun on
+CliMonopolyUI
+\noun default
+.
+ Puis, le programme lance le contrôleur en appelant la méthode 
+\begin_inset Quotes sld
+\end_inset
+
+lancer
+\begin_inset Quotes srd
+\end_inset
+
+ qui affiche un message de bienvenue et le menu.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le propriétaire du jeu est alors en charge d'inscrire les joueurs.
+ Il doit inscrire de 2 à 6 joueurs pour qu'il a puisse commencer une nouvelle
+ partie.
+\begin_inset Newline newline
+\end_inset
+
+Après l'inscription, les joueurs devront se départager pour voir qui commence.
+ Chaque joueur est invité à lancer les dés jusqu'à ce qu'il n'en reste plus
+ qu'un en liste.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le lancement d'une nouvelle partie crée un 
+\noun on
+PartieController
+\noun default
+ et lui associe une interface graphique 
+\noun on
+CliPartieUI
+\noun default
+ et un modèle 
+\noun on
+Partie
+\noun default
+.
+ Grâce à la méthode 
+\begin_inset Quotes sld
+\end_inset
+
+getPartieUi
+\begin_inset Quotes srd
+\end_inset
+
+, le contrôleur Monopoly n'a pas besoin de connaître la nature de la classe
+ qu'il associe au contrôleur de partie.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois tous ces éléments initialiser, le contrôleur de Monopoly appelle
+ la méthode 
+\begin_inset Quotes sld
+\end_inset
+
+jouer
+\begin_inset Quotes srd
+\end_inset
+
+ du contrôleur de partie.
+\end_layout
+
+\begin_layout Subsubsection
+Jouer le tour
+\end_layout
+
+\begin_layout Standard
+Une fois la partie lancée, les tours vont se succéder jusqu'à qu'il ne reste
+ plus qu'un joueur.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le diagramme ci-dessous montre tous les appels qui interviennent à chaque
+ tour.
+ A noter qu'un joueur peut jouer plusieurs tours d'affilé si il fait un
+ double au lancé de dés.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Jouer le tour.png
+	display false
+	scale 40
+	rotateAngle 270
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Jouer le tour
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Chaque tour commence par un lancé de dés qui détermine le nombre de case
+ que le joueur doit avancer.
+ Si il est en prison, il lui est impossible de se déplacer, mais il peut
+ espérer faire un double pour se libérer.
+ A défaut, il sera libérer après 3 tours de prison en payant 5 000 $ d'amende.
+\begin_inset Newline newline
+\end_inset
+
+Si c'est le 3e tour d'affilé du joueur, celui ci sera directement envoyé
+ en prison comme le stipule la règle.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois le joueur arrivé sur une case, le 
+\noun on
+PlateauController
+\noun default
+ entre en jeu pour exécuter le code associé à la case.
+ Pour cela, on appel la méthode 
+\begin_inset Quotes sld
+\end_inset
+
+dispatch
+\begin_inset Quotes srd
+\end_inset
+
+ qui se charge de rediriger l'action en fonction de la position du joueur.
+\end_layout
+
+\begin_layout Standard
+Si on détecte que le joueur a fait un tour complet du plateau, le jeu lui
+ verse un salaire de 20 000 $.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois toutes ces opérations effectuées, le joueur a la possibilité d'effectue
+r des actions manuelles à partir du menu.
+ Il peut acheter et vendre autant de fois qu'il le désir, mais devra indiquer
+ à la fin de son tour si il se retire de la partie ou passe au joueur suivant.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+En fin de tour, on vérifie si il le joueur a le droit à un tour supplémentaire
+ lorsqu'il fait un double.
+\end_layout
+
+\begin_layout Subsubsection
+Acheter
+\end_layout
+
+\begin_layout Standard
+Lorsque le joueur joue son tour, il a la possibilité d'acheter un bien ou
+ de construire un bâtiment si toutes les conditions sont réunies.
+ Les deux opérations de construction et de transfert de titre sont accessibles
+ par la même action, car il est impossible qu'il y ai ambiguïté.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Acheter.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Acheter
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La vue PartieUI appelle la méthode acheter du contrôleur de partie.
+ Ce dernier récupère le contrat associé au titre de la case courante pour
+ la suite du traitement.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Avant d'acheter, le joueur doit confirmer graphiquement sa volonté d'achat.
+ Si il répond positivement, il est alors débité et obtient le bien qu'il
+ désire à condition qu'il ai assez d'argent pour cela.
+\end_layout
+
+\begin_layout Subsubsection
+Vendre une maison
+\end_layout
+
+\begin_layout Standard
+En cas de difficulté, le joueur a la possibilité de vendre une de ses maisons
+ à la banque.
+ Il récupère ainsi l'intégralité de l'argent qui lui a servi à acheter la
+ maison.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Vendre une maison.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vendre une maison
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A l'appel de la méthode 
+\begin_inset Quotes sld
+\end_inset
+
+vendreMaison
+\begin_inset Quotes srd
+\end_inset
+
+, on demande tous les contrats du joueur à la banque.
+ Ce dernier est alors invité à sélectionner l'une de ses maisons qui sera
+ vendu dans la foulée.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La vente d'une maison rembourse au joueur le prix de construction de la
+ maison, ce qui diminue la valeur du contrat et redonne à la banque une
+ maison à vendre.
+\end_layout
+
+\begin_layout Subsubsection
+Vendre un hôtel
+\end_layout
+
+\begin_layout Standard
+Ce cas est similaire à la vente d'une maison, mais on rembourse au joueur
+ le prix de contruction de l'hôtel et des 4 maisons qui ont été présente
+ sur le terrain avant l'hôtel.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Vendre un hotel.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vendre un hôtel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Vendre un titre
+\end_layout
+
+\begin_layout Standard
+La vente de titre est un processus similaire à la vente de maison ou d'hôtel,
+ mais le joueur vend à un autre joueur et non à la banque.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Vendre un titre.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vendre un titre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans un premier temps, le joueur est invité à choisir le titre dont il souhaite
+ se séparer.
+ Ensuite, il doit sélectionner le joueur auquel il souhaite le vendre.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Étape importante du processus pour éviter les abus, l'acheteur doit confirmer
+ qu'il est bien disposer à acheter le bien.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour terminer, le titre est cédé au nouveau propriétaire si celui ci a assez
+ d'argent pour l'acheter.
+ L'argent est échangé entre les joueurs (en tenant compte du prix des maisons
+ et des hôtels présents), et le propriétaire du terrain est changé.
+\end_layout
+
+\begin_layout Subsubsection
+Passer au joueur suivant
+\end_layout
+
+\begin_layout Standard
+Au cours de la partie, il est possible qu'un joueur refuse d'acheter un
+ titre de propriété.
+ Dans ce cas, la banque met au enchère le titre à la fin du tour, lorsque
+ le joueur passe la main au joueur suivant.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Passer au joueur suivant.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Passer au joueur suivant
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour la demande d'enchère, la vue demande le joueur qui se propose pour
+ acheter le terrain et le montant auquel il l'achète.
+ Il doit être supérieure ou égale au montant du titre.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si il joueur a assez d'argent, le titre lui est transféré immédiatement.
+\end_layout
+
+\begin_layout Subsubsection
+Quitter la partie
+\end_layout
+
+\begin_layout Standard
+La dernière possibilité offerte au joueur est de quitter la partie.
+ Ses biens sont alors automatiquement saisis par la banque qui les remet
+ en jeu dès le prochain tour.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Quitter la partie.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Quitter la partie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+C'est un action simple où l'on demande au joueur de confirmer son choix
+ avant de le retirer de la partie.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Le joueur est retiré automatiquement à la fin du tour.
+\end_layout
+
+\begin_layout Subsubsection
+Finalisation
+\end_layout
+
+\begin_layout Standard
+La finalisation est une étape importe qui permet de libérer la mémoire et
+ d'effectuer les dernières actions avant que l'application ne ferme.
+ Avec l'environnement Java, la mémoire est automatiquement gérée par le
+ Garbage Collector, nous laissant ainsi la liberté de nous consacrer aux
+ autres traitements.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/freaxmind/workspace/miage-m1/uml/projet/diagrammes/Finalisation.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Finalisation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lorsque le contrôleur de partie détecte que la partie est terminé, les résultats
+ sont affichés.
+ Le joueur gagnant est déclaré vainqueur, son nom et l'argent qu'il a recueilli
+ sont affichés avant que l'application ne se termine.
+\end_layout
+
+\begin_layout Section
+Prototype
+\end_layout
+
+\begin_layout Standard
+L'objectif pédagogique du projet Monopoly se focalise sur la bonne compréhension
+ du sujet et la conception exhaustive avant d'entrer en phase de réalisation.
+ Dans ce cadre, il est prématuré de coder le produit sans une réflexion
+ préalable.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Néanmoins, la réalisation d'un prototype en cours de conception permet d'être
+ sûr que notre vision du produit est correcte et fonctionnelle.
+ Il faut pour cela mettre en place un environnement productif qui ne freine
+ pas le processus de pensée.
+\end_layout
+
+\begin_layout Subsection
+Environnement de développement
+\end_layout
+
+\begin_layout Standard
+Pour réaliser le prototype, j'ai choisi d'utiliser la technologie Groovy.
+ Ce langage de programmation apporte beaucoup de raccourci à la programmation
+ Java et permet de coder dynamiquement ou statiquement les types de données.
+ Les traitements sont donc simplifiés, et il est possible à tout moment
+ de revenir à un code source purement Java sans trop d'effort.
+ Le code peut être exécuté dynamiquement, et être compilé en bytecode Java
+ pour la portabilité.
+ Pour plus d'information sur le langage, vous pouvez consulter ce lien:
+ http://groovy.codehaus.org/.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pour coder, j'utilise l'environnement netbeans 7.2 avec le plugins Groovy.
+ Java est en version 7 pour supporter les dernières fonctionnalités.
+\end_layout
+
+\begin_layout Subsection
+Utilisation
+\end_layout
+
+\begin_layout Standard
+L'application dispose d'une interface en mode console simple d'utilisation.
+ A chaque demande d'interaction avec le joueur, le logiciel renvoie une
+ commande 
+\begin_inset Quotes sld
+\end_inset
+
+appuyer sur entrée pour lancer les dés
+\begin_inset Quotes srd
+\end_inset
+
+, 
+\begin_inset Quotes sld
+\end_inset
+
+sélectionner une action
+\begin_inset Quotes srd
+\end_inset
+
+, ou 
+\begin_inset Quotes sld
+\end_inset
+
+choisissez un bien/joueur de la partie
+\begin_inset Quotes srd
+\end_inset
+
+.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cette capture montre l'écran de démarrage de l'application.
+ Elle comprend un menu à 3 entrées: inscrire le joueur, commencer le jeu
+ et quitter le jeu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename captures/menu lancement jeu.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Menu au lancement du jeu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans ce cadre d'utilisation simple, on a inscrit 2 joueurs (Médéric et Lina(ma
+ soeur avec qui j'ai joué avant de concevoir le logiciel)) en entrant un
+ nom et une couleur de pion.
+ Les joueurs participants sont récapitulés à chaque requête.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Une fois le jeu commencé, une nouvelle invite s'affiche pour demander aux
+ joueurs de lancer les dés.
+ Le gagnant aura l'honneur de commencer.
+ Puis, on affiche le menu principal de jeu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename captures/menu jouer tour.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Menu au tour de jeu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ici, le gagnant au lancé de dés est Lina qui a obtenu 4.
+ Le menu montre les actions possibles lors de son premier tour: acheter
+ un bien, passer au joueur suivant ou quitter la partie.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La liste complète des actions est:
+\end_layout
+
+\begin_layout Enumerate
+acheter un titre, une maison ou un hôtel (seulement si les conditions sont
+ remplies)
+\end_layout
+
+\begin_layout Enumerate
+vendre une maison (uniquement si le joueur possède une maison)
+\end_layout
+
+\begin_layout Enumerate
+vendre un hôtel (uniquement si le joueur possède un hôtel
+\end_layout
+
+\begin_layout Enumerate
+vendre un titre (uniquement si le joueur possède un titre)
+\end_layout
+
+\begin_layout Enumerate
+passer immédiatement au joueur suivant
+\end_layout
+
+\begin_layout Enumerate
+quitter la partie
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Avant chaque tour, il sera demandé de lancer le dés en appuyant sur la touche
+ entrée.
+\end_layout
+
+\begin_layout Subsection
+Captures d'écran
+\end_layout
+
+\begin_layout Standard
+Les captures ci-dessous montrent plusieurs situations tirées du prototype.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename captures/enchère et parc gratuit.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Enchère sur un titre et gain du parc gratuit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ce premier cas montre le processus d'enchère.
+ La joueur Lina n'a pas voulu acheter l'avenue Henri-Martin et la banque
+ doit mettre le titre aux enchères.
+\end_layout
+
+\begin_layout Standard
+Le joueur qui se propose pour acheter se manifeste en entrant son numéro
+ de joueur.
+ Puis, on affiche le montant de l'enchère et l'argent disponible.
+ Il entre ensuite son prix d'achat, et si celui ci est supérieure ou égale
+ au prix du terrain, celui ci lui est transféré.
+\end_layout
+
+\begin_layout Standard
+Dans ce cas précis, le joueur a entrée une somme trop petite pour obtenir
+ le titre.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dans un second temps, on voit que le joueur Médéric est tombé sur la case
+ parc gratuit.
+ Il reçoit tout l'argent au centre, soit 52 000 €.
+ Les actions automatiques effectuées par le système sont des messages préfixés
+ du symbole 
+\begin_inset Quotes sld
+\end_inset
+
+#
+\begin_inset Quotes srd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename captures/vente de titre.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Vente d'un titre
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ce cas de figure montre la vente d'un titre par un joueur.
+ Celui ci désigne un titre et un joueur en se basant sur leurs numéros.
+ Puis, l'acheteur potentiel doit accepter la proposition en appuyant sur
+ la touche 
+\begin_inset Quotes sld
+\end_inset
+
+o
+\begin_inset Quotes srd
+\end_inset
+
+.
+ On voit que le titre n'apparaît plus dans la liste des propriétés du joueur.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename captures/tour complet - impôt - simple visite.png
+	display false
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Impôt après tour complet et simple visite en prison
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La dernière capture montre 2 autres situations.
+ Au 14e tour, le joueur tombe sur la case impôt sur le revenu et doit payer
+ 20 000 $ mais reçoit 20 000 $ pour avoir fait un tour complet.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Au 15e tour, le jouer tombe sur la case 
+\begin_inset Quotes sld
+\end_inset
+
+Prison
+\begin_inset Quotes srd
+\end_inset
+
+, et le système affiche qu'il s'agit d'une simple visite.
+\end_layout
+
+\end_body
+\end_document

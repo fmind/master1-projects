@@ -1,0 +1,59 @@
+5. TFTP Packets
+          opcode  operation
+            1     Read request (RRQ)
+            2     Write request (WRQ)
+            3     Data (DATA)
+            4     Acknowledgment (ACK)
+            5     Error (ERROR)
+            
+            The file name is a sequence of bytes in netascii terminated by a zero byte
+            The mode field contains the string "netascii" (vérifier méthode serveur)
+
+            2 bytes     string    1 byte     string   1 byte
+            ------------------------------------------------
+           | Opcode |  Filename  |   0  |    Mode    |   0  |
+            ------------------------------------------------
+
+                       Figure 5-1: RRQ/WRQ packet
+
+          block# begin with one and increase by one for each now block of data
+          data from zero to 512 bytes (512 bytes means it's not the last block of data)
+          
+                   2 bytes     2 bytes      n bytes
+                   ----------------------------------
+                  | Opcode |   Block #  |   Data     |
+                   ----------------------------------
+
+                        Figure 5-2: DATA packet
+
+                         2 bytes     2 bytes
+                         ---------------------
+                        | Opcode |   Block #  |
+                         ---------------------
+
+                         Figure 5-3: ACK packet
+
+              errorcode (integer)
+              errMsg (netascii) human consumption message with a zero byte
+              
+               2 bytes     2 bytes      string    1 byte
+               -----------------------------------------
+              | Opcode |  ErrorCode |   ErrMsg   |   0  |
+               -----------------------------------------
+
+                        Figure 5-4: ERROR packet
+
+I. Appendix
+
+Error Codes
+
+   Value     Meaning
+
+   0         Not defined, see error message (if any).
+   1         File not found.
+   2         Access violation.
+   3         Disk full or allocation exceeded.
+   4         Illegal TFTP operation.
+   5         Unknown transfer ID.
+   6         File already exists.
+   7         No such user.

@@ -1,0 +1,38 @@
+Adresse du dépôt GitHub:
+https://github.com/freaxmind/SocialGraph
+
+Développeurs:
+- Freaxmind = Médéric HURIER
+- Phongphong = PhongPhet THEPSOUVANH
+- Dnamra = Armand PY-PATINEC
+
+SCRUM Master: Apote AMBOUNDA
+
+
+
+Utilisation du programme:
+- se placer dans le répertoire Version Finale en ligne de commande
+- taper la commande "java -jar socialgraph.jar data/big-graph.csv"
+- une interface graphique doit s'ouvrir. Vous pouvez taper la requête dans le champ "Query" et voir le résultat dans le champ "Result"
+  les noeuds sélectionnés sont coloriés en rouge dans le zone d'affichage du graphe
+- pour voir la syntaxe, appuyer sur le bouton "help" ou "pre-fill" pour avoir un exemple dans le champ query
+
+Lancement d'un test:
+- la solution la plus simple est d'importer le dossier "src" et "test" dans Netbeans en incluant les bibliothèques du dossier lib dans les propriétés du projet
+- solution en ligne de commande (à taper dans le répertoire Version Finale)
+java -cp socialgraph-with-tests.jar:lib/junit-4.10.jar org.junit.runner.JUnitCore controllers.ActionControllerTest
+remplacer models.NodeTest par un des noms de fichier du dossier test en incluant le nom de son répertoire.
+
+
+
+Remarques générales:
+- la version fonctionnelle du programme n'a été disponible qu'à partir du dernier sprint
+   mais des tests unitaires sont disponibles
+- la classe ActionControllerTest regroupe des tests d'intégration. Nous nous sommes efforcés de rendre les autres indépendants et unitaires.
+- un diagramme de classe de la version finale est disponible dans le dossier Documentation
+- un fichier Product Backlog récapitule les requirements dans le dossier Documentation
+- chaque dossier Sprint contient un Sprint Backlog et une Burndown Chart du sprint
+
+
+
+En cas de problème, merci de contacter à l'adresse suivante: mederic.hurier@etu.univ-lorraine.fr

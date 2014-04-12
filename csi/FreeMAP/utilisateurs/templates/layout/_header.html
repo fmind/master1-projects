@@ -1,0 +1,30 @@
+{% load producteurs_tags %}
+
+<header data-role="header" data-id="header">
+    <a href="{% url index %}" id="logo" data-ajax="false">
+        <img src="{{ STATIC_URL }}images/logo.png" alt="Logo de FreeMAP, Bien(Vivre, Libre)" width="85" height="85" />
+    </a>
+
+    <div class="right">
+        {% if request.user|is_producteur %}
+            <span class="new-font">Bienvenue {{ request.user.username }}</span>
+            <br />
+            <hr />
+            <a href="{% url propositions %}">vos propositions</a>
+            <br />
+            <a href="{% url logout %}?next=/" data-ajax="false">se déconnecter</a>
+        {% else %}
+            Vous êtes un agriculteur ?
+            <br />
+            <br />
+            <a href="{% url propositions %}" data-ajax="false">Connectez-vous !</a>
+        {% endif %}
+    </div>
+
+    <hgroup class="new-font">
+        <h1><a href="{% url index %}" data-ajax="false">FreeMAP</a></h1>
+        <h2>Bien(Vivre, Libre)</h2>
+    </hgroup>
+
+    <div class="clear"></div>
+</header>

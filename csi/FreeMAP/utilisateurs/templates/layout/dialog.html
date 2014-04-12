@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>FreeMAP | {% block title %}Bien(Vivre, Libre){% endblock %}</title>
+
+        {% include 'layout/_include.html' %}
+    </head>
+    <body class="ui-overlay-a">
+        <section data-role="page" class="ui-body-a">
+            <div data-role="header">
+                <h1>
+                    {% block titre %}Message{% endblock %}
+                </h1>
+            </div>
+
+            <div data-role="content">
+                {% block content %}{% endblock %}
+            </div>
+        </section>
+    </body>
+</html>

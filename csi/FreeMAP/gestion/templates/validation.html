@@ -1,0 +1,79 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static %}
+
+
+{% block breadcrumbs %}
+<div class="breadcrumbs">
+    <a href="/administration/">{% trans 'Home' %}</a>
+    &rsaquo;
+    Validation
+</div>
+{% endblock %}
+
+
+{% block content %}
+<div id="content">
+    <h3>Panier de la semaine composé avec succès !</h3>
+
+    <table>
+        <tr>
+            <td>Nombre de paniers</td>
+            <td class="prix">{{ nb }}</td>
+        </tr>
+        <tr>
+            <td>Prix moyen (trimestre)</td>
+            <td class="prix">{{ prix_moyen|floatformat:2 }} </td>
+            <td>€</td>
+        </tr>
+        <tr>
+            <td>Prix de revient</td>
+            <td class="prix">{{ panier.prix_revient|floatformat:2 }}</td>
+            <td>€</td>
+        </tr>
+        <tr>
+            <td>Frais supplémentaires</td>
+            <td class="prix">{{ panier.frais_supplementaires|floatformat:2 }}</td>
+            <td>€</td>
+        </tr>
+        <tr>
+            <td>Produits manquants</td>
+            <td colspan="2">
+                {% for type_produit, quantite in produits_manquants.items %}
+                <span>{{ quantite }} {{ type_produit }}</span><br />
+                {% endfor %}
+            </td>
+        </tr>
+    </table>
+
+    <br />
+
+    <p class="infos">
+        Rendez-vous à la semaine prochaine !
+    </p>
+</div>
+{% endblock %}
+
+
+{% block extrastyle %}{{ block.super }}
+<style type="text/css">
+    #content h3, #content p.infos {
+        margin-top: 10px;
+        font-size: 20px;
+        text-align: center;
+    }
+    #content p.infos {
+        font-style: italic;
+    }
+    #content table {
+        margin: 20px auto;
+    }
+    #content table td {
+        font-size: 17px;
+        line-height: 20px;
+    }
+    
+    .prix {
+        text-align: right;
+    }
+</style>
+{% endblock %}

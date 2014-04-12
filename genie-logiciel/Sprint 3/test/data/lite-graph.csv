@@ -1,0 +1,8 @@
+nom;type;target;attributes
+Barbara;friend;Elizabeth;since=1989|share=[books,movies,tweets]
+Barbara;friend;Anna;since=2011
+Barbara;friend;Carol;since=1999
+Carol;friend;Dawn;since=2005
+Anna;employee_of;BigCo;role=Developper|hired=03.06
+Barbara;employee_of;BigCo;role=Architect|hired=02.05
+Carol;employee_of;BigCo;role=Research|hired=10.08

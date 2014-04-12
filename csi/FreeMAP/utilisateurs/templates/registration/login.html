@@ -1,0 +1,15 @@
+{% extends 'layout/utilisateurs.html' %}
+
+{% block content %}
+<section data-role="content" class="align_center">
+    <h3 class="new-font">Authentification</h3>
+    <br />
+    <form action="{% url login %}?next={{ next }}" method="post" data-ajax="false">{% csrf_token %}
+        {{ form.as_table }}
+        <br />
+        <p>
+            <input type="submit" value="Se Connecter" />
+        </p>
+    </form>
+</section>
+{% endblock %}

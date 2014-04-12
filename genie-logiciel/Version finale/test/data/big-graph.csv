@@ -1,0 +1,23 @@
+nom;type;target;direction;attributes
+Barbara;friend;Elizabeth;both;since=1989|share=[books,movies,tweets]
+Barbara;friend;Anna;both;since=2011
+Barbara;friend;Carol;both;since=1999
+Carol;friend;Dawn;both;since=2005
+Dawn;friend;Jill;both;since=2002
+Pramod;friend;Martin;both;since=2003
+Elizabeth;friend;Jill;both;since=1998
+Anna;employee_of;BigCo;out;role=Developper|hired=03.06
+Barbara;employee_of;BigCo;out;role=Architect|hired=02.05
+Carol;employee_of;BigCo;out;role=Research|hired=10.08
+Anna;likes;Refactoring;out
+Barbara;likes;Refactoring;out
+Barbara;likes;NoSQL Distilled;out
+Carol;likes;NoSQL Distilled;out
+Dawn;likes;NoSQL Distilled;out
+Elizabeth;likes;NoSQL Distilled;out
+NoSQL Distilled;category;Databases;out
+Database Refactoring;category;Databases;out
+Pramod;author;Database Refactoring;out
+Pramod;author;NoSQL Distilled;out
+Martin;author;NoSQL Distilled;out
+Martin;author;Refactoring;out

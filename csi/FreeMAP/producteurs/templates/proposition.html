@@ -1,0 +1,44 @@
+{% extends 'layout/utilisateurs.html' %}
+
+{% block content %}
+<section data-role="content" class="align_center">
+    <div class="limit">
+        <a href="{% url nouvelle_proposition %}" id="dialog" class="hide" data-rel="dialog" data-transition="slidedown">Ajouter une nouvelle proposition</a> 
+        <a id="dialog-replace" data-role="button" data-icon="add" data-inline="true">Ajouter une nouvelle proposition</a>
+
+        <h4 class="new-font">Propositions en cours</h4>
+        <ul data-role="listview">
+        {% for prop in encours %}
+            <li>
+                <strong>{{ prop.quantite_commandee }} / {{ prop.quantite_proposee }} {{ prop.produit }}</strong> à {{ prop.prix|floatformat:2 }} €
+                <br />
+                <span>ajouté le {{ prop.ajoute_le }}, péremption le {{ prop.date_peremption }}</span>
+            </li>
+        {% endfor %}
+        </ul>
+
+        <br />
+
+        <h4 class="new-font">Historique</h4>
+        <ul data-role="listview">
+        {% for prop in historique %}
+            <li>
+                <strong>{{ prop.quantite_commandee }} / {{ prop.quantite_proposee }} {{ prop.produit }}</strong> à {{ prop.prix|floatformat:2 }} €
+                <br />
+                <span>ajouté le {{ prop.ajoute_le }}, péremption le {{ prop.date_peremption }}</span>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#dialog').dialog();
+        $('#dialog-replace').click(function(e) {
+            e.preventDefault();
+            $('#dialog').trigger('click');
+        });
+    });
+</script>
+{% endblock %}

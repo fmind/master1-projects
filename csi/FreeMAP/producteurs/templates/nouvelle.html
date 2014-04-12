@@ -1,0 +1,16 @@
+{% extends 'layout/dialog.html' %}
+
+
+{% block titre %}
+Ajouter une Nouvelle Proposition
+{% endblock %}
+
+
+{% block content %}
+<form action="{% url nouvelle_proposition %}" method="post" data-ajax="false">
+    {{ form.as_table }}
+    <br />
+    <br />
+    <input type="submit" value="Envoyer" />
+</form>
+{% endblock %}

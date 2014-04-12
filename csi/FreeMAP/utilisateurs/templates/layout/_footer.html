@@ -1,0 +1,21 @@
+<footer data-role="footer" data-id="footer" data-position="fixed" class="ui-grid-a align_center">
+    <div class="ui-block-a">
+        Tous droits réservés. &copy;{% now "Y" %}
+        <a href="{% url index %}" data-ajax="false">FreeMAP</a>
+    </div>
+
+    <div class="ui-block-b">
+        <a href="http://jquerymobile.com/" target="_blank" title="jQuery Mobile | touch-optimized web framework for smartphones &amp; tablets" class="logo">
+            <img src="{{ STATIC_URL }}images/footer/jquery-mobile.png" alt="jQuery Mobile powered" width="94" height="32">
+        </a>
+        <a href="https://www.djangoproject.com/" target="_blank" title="Django | the web framework for perfectionists with deadlines" class="logo">
+            <img src="{{ STATIC_URL }}images/footer/django.png" alt="Django powered" width="70" height="32">
+        </a>
+        <a href="http://www.postgresql.org/" target="_blank" title="PostgreSQL | the world's most advanced open source database" class="logo">
+            <img src="{{ STATIC_URL }}images/footer/postgresql.png" alt="PostgreSQL powered" width="90" height="32">
+        </a>
+        <a href="http://validator.w3.org/check?uri=referer" target="_blank" title="HTML5 powered with CSS3 / styling, device access, performance &amp; integration, and semantics" class="logo">
+            <img src="http://www.w3.org/html/logo/badge/html5-badge-h-css3-device-performance-semantics.png" alt="HTML5 Powered with CSS3" width="114" height="32">
+        </a>
+    </div>
+</footer>
